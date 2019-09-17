@@ -20,12 +20,12 @@
                 <span id="crystalBallBaseMain"></span>
             </div>
             <section class="fortuneContainer container">
-                <article class="fortuneBox" v-if="randomIssue.title">
+                <article class="fortuneBox" v-if="this.clicked">
                     <header>
                         <h2>{{limitString(randomIssue.title, 38)}}</h2>
                     </header>
                     <p>{{limitString(randomIssue.body, 250)}}</p>
-                    <footer>
+                    <footer v-if="this.errors.length < 1">
                         <div class="fortuneFooterRepo">{{getRepoName(randomIssue.repository_url)}}</div>
                         <div class="fortuneFooterComments">
                            {{randomIssue.comments}} <font-awesome-icon icon="comments" />
@@ -53,16 +53,21 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 export default {
   data() {
     return {
-      errors: [],
       randomIssue: {},
+      clicked: false,
     }
   },
 
-  props: ['issues'],
+  props: ['issues', 'errors'],
 
   methods: {
       getRandomIssue: function() {
-        this.randomIssue = this.issues[(Math.floor(Math.random() * Math.floor(this.issues.length)))]
+        this.clicked = true
+        if (this.errors.length > 0) {
+            this.randomIssue = {"title": "Error! Unable to fetch issues", "body": "The GitHub API may not be responding. Please refresh shortly."}
+        } else {
+            this.randomIssue = this.issues[(Math.floor(Math.random() * Math.floor(this.issues.length)))]
+        }
       }
   }
 }
@@ -202,7 +207,7 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 2em;
-}
+    }
 }
 
 

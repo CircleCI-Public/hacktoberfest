@@ -1,14 +1,6 @@
 <template>
   <div id="app">
     <header class="col hero">
-      <nav class="row container">
-        <ul class="navMenu row">
-          <li class="navItem">Link 1</li>
-          <li class="navItem">Link 2</li>
-          <li class="navItem">Link 3</li>
-          <li class="navItem">Link 4</li>
-        </ul>
-      </nav>
       <section class="row container">
         <a href="#" class="ctaButton">Button 1</a>
         <a href="#" class="ctaButton">Button 2</a>
@@ -60,8 +52,8 @@
         <div class="col"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor est assumenda, nulla sed tempore similique neque sunt natus alias itaque quidem beatae accusantium velit accusamus numquam at unde corporis! Perferendis.</p></div>
       </div>
     </article>
-    <CrystalBall :issues="issues" />
-    <IssueList :issues="issues" />
+    <CrystalBall :issues="issues" :errors="errors" />
+    <IssueList :issues="issues" :errors="errors" />
     <section class="col hero container">
       <h1>Resources</h1>
       <div class="row">
@@ -81,34 +73,13 @@
       <p>CircleCI is hosting meetups around the country to encourage participation in Hacktoberfest. Come learn how to complete the challenge and network with other open source contributors at one of our upcoming events:</p>
       <div class="row">
         <div class="col">
-          <article class="eventCard">
-            <figure>
-              <img src="https://via.placeholder.com/200x100" alt="">
-            </figure>
-            <span>October 3</span>
-            <span>Denver, CO</span>
-            <a href="" class="ctaButton">Eventbrite</a>
-          </article>
+          <EventCard date="10-3-2019" link="#" image="https://via.placeholder.com/200x100" location="Denver, CO" />
         </div>
         <div class="col">
-          <article class="eventCard">
-            <figure>
-              <img src="https://via.placeholder.com/200x100" alt="">
-            </figure>
-            <span>October 8</span>
-            <span>New York, NY</span>
-            <a href="" class="ctaButton">Eventbrite</a>
-          </article>
+          <EventCard date="10-8-2019" link="#" image="https://via.placeholder.com/200x100" location="New York, Ny" />
         </div>
         <div class="col">
-          <article class="eventCard">
-            <figure>
-              <img src="https://via.placeholder.com/200x100" alt="">
-            </figure>
-            <span>October 15</span>
-            <span>Seattle, WA</span>
-            <a href="" class="ctaButton">Eventbrite</a>
-          </article>
+          <EventCard date="10-15-2019" link="#" image="https://via.placeholder.com/200x100" location="Seattle, WA" />
         </div>
       </div>
     </section>
@@ -120,14 +91,16 @@
 import axios from 'axios'
 // mixins
 // components
-import CrystalBall from '../components/CrystalBall.vue'
-import IssueList from '../components/IssueList.vue'
+import CrystalBall from '@/components/CrystalBall.vue'
+import IssueList from '@/components/IssueList.vue'
+import EventCard from '@/components/EventCard.vue'
 
 export default {
   name: 'app',
   components: {
     CrystalBall,
-    IssueList
+    IssueList,
+    EventCard
   },
   data() {
     return {
@@ -154,14 +127,6 @@ export default {
 <style lang="scss">
 
 @import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: $color-primary;
-  color: $color-white;
-}
 
 h1, h2 {
   font-family: 'Kelly Slab', cursive;

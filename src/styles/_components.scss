@@ -41,14 +41,3 @@
 p {
     padding: 1em;
 }
-
-.eventCard {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- max-width: 20em;
- background-color: $color-tertiary;
- padding: 1em;
- margin-bottom: 0.4em;
-}
