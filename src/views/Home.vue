@@ -8,39 +8,42 @@
     </header>
     <article class="col hero container">
       <div class="row">
+        <figure class="col">
+          <parallax-container class="col"><parallax-element :parallaxStrength="-1" :type="'depth'" class="col heroImage">
+            <img src="@/assets/hacktober-header-shadows.svg" alt="CircleCI Orbtoberfest" id="OrbtoberfestThemeLogo">
+          </parallax-element></parallax-container>
+        </figure>
         <div class="col">
           <h1>What is Hacktoberfest?</h1>
           <p>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean and DEV. It encourages individuals of all skill levels to engage with open source software during the month of October and is open to everyone in our global community.</p>
         </div>
-        <figure class="col heroImage">
-          <img src="https://via.placeholder.com/460" alt="CircleCI Orbtoberfest">
-        </figure>
       </div>
       <div class="col">
-        <h2>Second heading</h2>
-        <div class="row">
+        <h2>How to participate in Hacktoberfest</h2>
+        <div class="row participateRow">
           <div class="col">
-            <span class="dot"></span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <span class="dot">1</span>
+            <p>Register for hacktoberfest at <a href="https://hacktoberfest.digitalocean.com/">https://hacktoberfest.digitalocean.com/</a>. Signups are open from October 1 through October 31</p>
           </div>
           <div class="col">
-            <span class="dot"></span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <span class="dot">2</span>
+            <p>Complete four pull requests during the month of October.</p>
           </div>
           <div class="col">
-            <span class="dot"></span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <span class="dot">3</span>
+            <p>Click here for a full list of Hacktoberfest FAQs.</p>
           </div>
         </div>
       </div>
       <div class="row">
+        <div class="col">
+          <h1>What you win</h1>
+          <p>If you complete the 2019 challenge you will earn a limited-edition Hacktoberfest T-shirt. You must submit at least four quality PRs to get a T-shirt.</p>
+          <p>Bonus: if you complete all four of your PRs on CircleCI, fill out this form to receive additional CircleCI Hacktoberfest swag while supplies last. Be sure to tag your PRs with ‘<span class="orbtoberfestLabel">orbtoberfest</span>’ so we can keep track of Hacktoberfest submissions.</p>
+        </div>
         <figure class="col heroImage">
           <img src="https://via.placeholder.com/460" alt="CircleCI Orbtoberfest">
         </figure>
-        <div class="col">
-          <h1>Shirt</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia sint quae! Ea nemo sint sunt illo debitis suscipit illum nobis, blanditiis aliquam. Adipisci ducimus itaque deserunt, laborum dolor earum.</p>
-        </div>
       </div>
     </article>
     <article class="col container">
@@ -89,18 +92,26 @@
 <script>
 // deps
 import axios from 'axios'
+import Vue from 'vue'
+import VueMouseParallax from 'vue-mouse-parallax'
+
+ 
+Vue.use(VueMouseParallax)
 // mixins
 // components
 import CrystalBall from '@/components/CrystalBall.vue'
 import IssueList from '@/components/IssueList.vue'
 import EventCard from '@/components/EventCard.vue'
+import { ParallaxContainer, ParallaxElement } from 'vue-mouse-parallax'
 
 export default {
   name: 'app',
   components: {
     CrystalBall,
     IssueList,
-    EventCard
+    EventCard,
+    ParallaxContainer,
+    ParallaxElement
   },
   data() {
     return {

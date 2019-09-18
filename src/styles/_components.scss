@@ -9,8 +9,9 @@
 }
 
 .hero {
-    h1 {
+    h1, h2, h3 {
         align-self: flex-start;
+        padding: 1rem;
     }
     .col {
         display: flex;
@@ -18,26 +19,46 @@
         align-items: center;
 
     }
-    .row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
     
     .heroImage {
+        min-width: 30em;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        img {
-            max-width: 25em;
-            margin: 1em;
+        #OrbtoberfestThemeLogo {
+            transform: translate(1.5em);
         }
-        
+    }
+}
+
+.participateRow {
+    border-radius: 0.3em;
+    background-color: rgba( 255,255,255, 0.1);
+    padding: 1.2em;
+
+    .dot {
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        border: 0.3em solid $color-secondary;
+        line-height: 2em;
     }
 }
 
 p {
     padding: 1em;
+}
+
+.parallax-container {
+    padding: 1em;
+}
+
+.orbtoberfestLabel {
+    padding: 0.2em;
+    margin: 0.1em;
+    border-radius: 0.3em;
+    background-color: $color-accent;
+    color: $color-white;
+    font-weight: bold;
 }
