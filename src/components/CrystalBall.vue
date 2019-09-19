@@ -1,5 +1,6 @@
 <template>
   <section class="col container crystalBallComponent">
+    <div class="sunburst" v-bind:class="{animateSpin: toggle}"></div>
     <h1 id="findIssue">Find an issue</h1>
     <section class="fortuneContainer container">
       <article class="fortuneBox" v-if="this.clicked" v-bind:class="{animateHideBox: toggle}">
@@ -411,14 +412,6 @@
 </template>
 
 <script>
-import Vue from "vue";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faComments } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-library.add(faComments);
-
-Vue.component("font-awesome-icon", FontAwesomeIcon);
-
 export default {
   data() {
     return {
@@ -541,7 +534,7 @@ export default {
     transform: translate(0.3em, -0.3em);
   }
   75% {
-    transform: translate(-0.3em, -0.8em);
+    transform: translate(-0.3em, -1em);
   }
   100% {
     transform: translate(0em, 0em);
@@ -602,6 +595,19 @@ export default {
   }
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animateSpin {
+  animation: spin ease 3s;
+}
+
 .animateHideBox {
   animation: hideBox ease 3s;
 }
@@ -611,12 +617,12 @@ export default {
 }
 
 .animateSmoke1 {
-  animation-delay: 0.1s;
+  animation-delay: 0.4s;
   animation: smoke1 linear 3s;
 }
 
 .animateSmoke2 {
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
   animation: smoke2 linear 3s;
 }
 
@@ -630,6 +636,19 @@ export default {
 .crystalBallComponent {
   // End Animations
   text-align: center;
+  position: relative;
+
+  .sunburst {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRw%0D%0AOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTI3MS41NiAxMjcxLjU2Ij48%0D%0AZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQpO30uY2xzLTJ7Zmls%0D%0AbDp1cmwoI3JhZGlhbC1ncmFkaWVudC0zKTt9LmNscy0ze2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGll%0D%0AbnQtMTMpO30uY2xzLTR7ZmlsbDp1cmwoI3JhZGlhbC1ncmFkaWVudC0xNSk7fTwvc3R5bGU+PHJh%0D%0AZGlhbEdyYWRpZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQiIGN4PSI2MzUuNzgiIGN5PSI2MzUuNzgi%0D%0AIHI9IjYzNS43OCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0i%0D%0AMCIgc3RvcC1jb2xvcj0iIzkwMmM4NCIvPjxzdG9wIG9mZnNldD0iMC4xMSIgc3RvcC1jb2xvcj0i%0D%0AIzg4MmM4MCIvPjxzdG9wIG9mZnNldD0iMC4yOCIgc3RvcC1jb2xvcj0iIzczMmM3NSIvPjxzdG9w%0D%0AIG9mZnNldD0iMC40NyIgc3RvcC1jb2xvcj0iIzU1MmM2NiIvPjxzdG9wIG9mZnNldD0iMC43MyIg%0D%0Ac3RvcC1jb2xvcj0iIzU1MmM2NiIgc3RvcC1vcGFjaXR5PSIwLjMzIi8+PHN0b3Agb2Zmc2V0PSIw%0D%0ALjg4IiBzdG9wLWNvbG9yPSIjNTUyYzY2IiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRp%0D%0AZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50LTMiIGN4PSI2MzUuMzUiIGN5%0D%0APSIwIiByPSIwLjAxIiB4bGluazpocmVmPSIjcmFkaWFsLWdyYWRpZW50Ii8+PHJhZGlhbEdyYWRp%0D%0AZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQtMTMiIGN4PSIwLjAyIiBjeT0iNjM4Ljg2IiByPSIxLjk3%0D%0AIiB4bGluazpocmVmPSIjcmFkaWFsLWdyYWRpZW50Ii8+PHJhZGlhbEdyYWRpZW50IGlkPSJyYWRp%0D%0AYWwtZ3JhZGllbnQtMTUiIGN4PSI2MzUuMzMiIGN5PSIwIiByPSIwIiB4bGluazpocmVmPSIjcmFk%0D%0AaWFsLWdyYWRpZW50Ii8+PC9kZWZzPjx0aXRsZT5oYWNrdG9iZXJmZXN0X3N1bmJ1cnN0LW9ubHk8%0D%0AL3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8x%0D%0ALTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTI1OS4yLDUx%0D%0AMC43N2E2MzUuNjMsNjM1LjYzLDAsMCwwLTM2LjU2LTExOS43MmwtNDQ5LDE4Ny4zM2ExNDMuMzks%0D%0AMTQzLjM5LDAsMCwxLDkuODUsMjcuNTRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNOTg4LjI1%0D%0ALDEwNi42MkE2MzYuNDEsNjM2LjQxLDAsMCwwLDg3OC4xMiw0Ny45M2wtMTg4LDQ1NS44MmExNDQu%0D%0AMTUsMTQ0LjE1LDAsMCwxLDI1LjU3LDExLjczWiIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9p%0D%0AbnRzPSI2MzUuMzUgMCA2MzUuMzQgMCA2MzUuMzUgMCA2MzUuMzUgMCIvPjxwYXRoIGNsYXNzPSJj%0D%0AbHMtMSIgZD0iTTc1OC41NCw1NTMuNTJsNDA1LTI3Mi4zNWE2MzkuMDgsNjM5LjA4LDAsMCwwLTc5%0D%0ALjA3LTk1Ljg2bC0zNDUuNTYsMzQ3QTE0NS4wOCwxNDUuMDgsMCwwLDEsNzU4LjU0LDU1My41Mloi%0D%0ALz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMS45NCw1MTIuOTFBNjM4LjgsNjM4LjgsMCwwLDAs%0D%0AMCw2MzUuNzh2LjNINDk4LjExYTE0NSwxNDUsMCwwLDEsMy4zOS0yN1oiLz48cGF0aCBjbGFzcz0i%0D%0AY2xzLTEiIGQ9Ik03NTkuNzIsMTI1OS40MWE2MzQuODUsNjM0Ljg1LDAsMCwwLDExOS43Ni0zNi4z%0D%0ANEw2OTQsNzc2LjI2YTE0NC4wNywxNDQuMDcsMCwwLDEtMjguNTYsNy41NFoiLz48cGF0aCBjbGFz%0D%0Acz0iY2xzLTEiIGQ9Ik0xMi4yMiw3NjAuMDlBNjM1LjE1LDYzNS4xNSwwLDAsMCw0OC42Myw4Nzku%0D%0AODNMNTA2LjQ1LDY4OS40NGExNDMuNDEsMTQzLjQxLDAsMCwxLTYuNjktMjYuMzJaIi8+PHBhdGgg%0D%0AY2xhc3M9ImNscy0xIiBkPSJNMjgyLjcyLDExNjQuNTVhNjM2LjgyLDYzNi44MiwwLDAsMCwxMTAs%0D%0ANTguOEw1NzkuODcsNzcxLjE2YTE0NC43NywxNDQuNzcsMCwwLDEtMjQuMzMtMTQuOVoiLz48cGF0%0D%0AaCBjbGFzcz0iY2xzLTEiIGQ9Ik01MTIuNTUsMTI1OS41NmE2MzkuMjMsNjM5LjIzLDAsMCwwLDEy%0D%0AMy4yMywxMmguMTVsLS4xLTQ4Ni4xOGExNDQuNzcsMTQ0Ljc3LDAsMCwxLTI5LTQuMzVaIi8+PHBh%0D%0AdGggY2xhc3M9ImNscy0xIiBkPSJNOTg5LjQ2LDExNjQuMTNhNjM4LjU4LDYzOC41OCwwLDAsMCw5%0D%0ANi03OC45TDc0NC4yMyw3NDQuMTdhMTQ2LjI0LDE0Ni4yNCwwLDAsMS0yMy41NywxOC43NFoiLz48%0D%0AcGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMTY0LjM0LDk4OS4xNWE2MzYuNDMsNjM2LjQzLDAsMCww%0D%0ALDU4Ljg3LTExMEw3NzcuNDQsNjk0LjM4YTE0My45MSwxNDMuOTEsMCwwLDEtMTQsMjYuNTZaIi8+%0D%0APHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTA2LjgxLDI4M0E2MzUuODQsNjM1Ljg0LDAsMCwwLDQ4%0D%0ALjA3LDM5My4xTDUwOS42NSw1ODMuNzlhMTQzLjg4LDE0My44OCwwLDAsMSwxMi43LTIzLjQ0WiIv%0D%0APjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTAsNjM2LjA4YzAsMS44OCwwLDMuNzUuMDUsNS41N2ww%0D%0ALTUuNTdaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTExLjA4LDEyLjNBNjM1LDYzNSwwLDAs%0D%0AMCwzOTEuNCw0OC43N2wxOTEuNiw0NjBBMTQzLjg5LDE0My44OSwwLDAsMSw2MDguNDEsNTAwWiIv%0D%0APjxwb2x5Z29uIGNsYXNzPSJjbHMtNCIgcG9pbnRzPSI2MzUuMzMgMCA2MzUuMzMgMCA2MzUuMzQg%0D%0AMCA2MzUuMzMgMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwNy42NCw5ODkuNzlhNjM5Ljc1%0D%0ALDYzOS43NSwwLDAsMCw3OSw5Nkw1MzQuNzEsNzM3YTE0NC4xMSwxNDQuMTEsMCwwLDEtMTYuNTUt%0D%0AMjIuNjRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNzg3LjYsNjM1LjE4Yy4wNywxLjgzLjEy%0D%0ALDMuNjcuMTIsNS41M2ExNDYsMTQ2LDAsMCwxLTIuMTUsMjVsNDczLjkyLDkzLjY2YTYzOC44NCw2%0D%0AMzguODQsMCwwLDAsMTIuMDctMTIzLjU3di0uNloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01%0D%0ANTkuNzIsNTIyLjEsMjgxLjQ4LDEwNy44NGE2MzguNSw2MzguNSwwLDAsMC05NS45LDc5TDUzOS4y%0D%0ANCw1MzkuNTNBMTQ1LjY4LDE0NS42OCwwLDAsMSw1NTkuNzIsNTIyLjFaIi8+PHBhdGggY2xhc3M9%0D%0AImNscy0xIiBkPSJNNjYzLjE5LDQ5Ny4yOSw3NTguMywxMS44N0E2MzguMzEsNjM4LjMxLDAsMCww%0D%0ALDYzNS43OCwwbC0uNDUsNDk2LjA2cTMuNzUtLjE5LDcuNTQtLjJBMTQ0Ljg2LDE0NC44NiwwLDAs%0D%0AMSw2NjMuMTksNDk3LjI5WiIvPjwvZz48L2c+PC9zdmc+Cg==');
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.2);
+  }
 }
 
 #crystalOrbLogo {
@@ -637,7 +656,9 @@ export default {
 }
 
 .crystalBallClickable {
-  width: 35em;
+  max-width: 35em;
+  width: 100%;
+  min-width: 20em;
   height: auto;
 
   .cb-stars {
@@ -648,6 +669,7 @@ export default {
 #findIssue {
   font-weight: bold;
   font-size: 3em;
+  margin-bottom: 2.5em;
 }
 
 .crystalBallContainer {
@@ -655,16 +677,19 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 2;
 }
 
 .fortuneContainer {
-  transform: translateY(3em);
+  position: absolute;
+  left: 10%;
+  transform: translateY(6em);
   font-size: 0.8em;
   background-color: transparent;
   border: 0.1em solid $color-secondary;
   border-radius: 0.3em;
   width: 80%;
-  height: 12em;
+  max-height: 15em;
   overflow: hidden;
 
   footer {

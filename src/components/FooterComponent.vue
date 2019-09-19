@@ -2,14 +2,13 @@
     <footer class="footerContainer container">
         <div class="row">
             <figure id="footerLogo">
-                <img src="https://via.placeholder.com/200x50" alt="CircleCI logo">
+                <img src="@/assets/circle-logo-horizontal-white.svg" width="100em"  height="auto" alt="CircleCI logo">
             </figure>
             <div class="socialmediaRow">
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
+                <font-awesome-icon class="socialmediaIcon" :icon="['fas', 'globe']" />
+                <font-awesome-icon class="socialmediaIcon" :icon="['fab', 'twitter']" />
+                <font-awesome-icon class="socialmediaIcon" :icon="['fab', 'linkedin']" />
+                <font-awesome-icon class="socialmediaIcon" :icon="['fab', 'github']" />
             </div>
         </div>
         <div class="row">
@@ -34,6 +33,11 @@ export default {
 </script>
 <style lang="scss">
 .footerContainer {
+    .socialmediaRow {
+        .socialmediaIcon {
+            margin: 0.2em 1em;
+        }
+    }
     
     margin-top: 1em !important;
     padding: 0.2em;

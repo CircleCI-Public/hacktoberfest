@@ -1,16 +1,21 @@
+a {
+    color: $color-accent-light;
+    font-weight: bold;
+}
+
 .ctaButton {
-    background-color: $color-accent;
+    background-color: $color-secondary;
     color: $color-white;
     display: inline-block;
-    padding: 0.6em 2em;
+    padding: 0.8em 2em;
     font-weight: bold;
+    border-radius: 0.1em;
     text-decoration: none;
     margin: 0.5em
 }
 
 .hero {
     h1, h2, h3 {
-        align-self: flex-start;
         padding: 1rem;
     }
     .col {
@@ -27,7 +32,8 @@
         align-items: center;
 
         #OrbtoberfestThemeLogo {
-            transform: translate(1.5em);
+            transform: translateX(2em);
+            transform: scale(1.2);
         }
     }
 }
@@ -61,4 +67,24 @@ p {
     background-color: $color-accent;
     color: $color-white;
     font-weight: bold;
+}
+.tipBoxRow {
+    display: flex;
+    padding: 1em;
+    
+    .col {
+        justify-content: center;
+        align-items: center;
+    }
+}
+.tipBox {
+    display: flex;
+    padding: 0.2em;
+    background-color: $color-accent;
+    border-radius: 0.2em;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 12em;
 }
