@@ -5,9 +5,9 @@
     <section class="fortuneContainer container">
       <article class="fortuneBox" v-if="this.clicked" v-bind:class="{animateHideBox: toggle}">
         <header>
-          <h2>{{limitString(randomIssue.title, 26)}}</h2>
+          <h2>{{randomIssue.title}}</h2>
         </header>
-        <p>{{limitString(randomIssue.body, 200)}}</p>
+        <p>{{randomIssue.body}}</p>
         <footer v-if="this.errors.length < 1">
           <div class="fortuneFooterRepo">{{getRepoName(randomIssue.repository_url)}}</div>
           <div class="fortuneFooterComments">
@@ -20,6 +20,9 @@
         <h2>Click the crystal ball to find your fortune</h2>
       </article>
     </section>
+    <transition name="fade">
+    <a v-if="this.clicked" :href="randomIssue.html_url" class="crystalBallIssueButton">Open issue</a>
+    </transition>
     <section class="col crystalBallContainer">
       <div @click="getRandomIssue" class="crystalBallClickable">
         <figure class="cystallBallSVG">
@@ -703,6 +706,33 @@ export default {
     flex-direction: column;
     padding: 1em;
     flex: 1;
+      h2, p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
   }
+}
+
+.crystalBallIssueButton {
+  padding: 1em 2em;
+  left: 50%;
+  margin-left: -5em;
+  top: 15em;
+  position: absolute;
+  background-color: $color-secondary;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2em;
+  z-index: 5;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

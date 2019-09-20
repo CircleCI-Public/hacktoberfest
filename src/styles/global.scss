@@ -10,4 +10,15 @@
     .footerContainer .row {
         align-items: center;
     }
+    .gamaburst {
+        display: none;
+    }
+    .desktop-left {
+        text-align: center;
+    }
   }
+
+  .desktop-left {
+    text-align: left;
+    align-self: flex-start;
+}

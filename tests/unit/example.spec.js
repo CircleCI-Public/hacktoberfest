@@ -1,12 +1,18 @@
 import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import CrystalBall from '@/components/CrystalBall.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+describe('CrystalBall.vue', () => {
+  it('renders new issue when clicked', () => {
+    const issues = [{
+      "repository_url": "www.circleci.com",
+      "html_url":"www.circleci.com",
+      "comments":"2",
+      "body":"test issue body",
+      "title":"test issue title"
+    }]
+    const wrapper = shallowMount(CrystalBall, {
+      propsData: { issues }
     })
-    expect(wrapper.text()).toMatch(msg)
+    expect(wrapper.text()).toMatch(CrystalBall)
   })
 })

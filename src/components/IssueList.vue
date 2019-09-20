@@ -3,16 +3,16 @@
     <div class="container">
       <section class="availableIssuesContainer" v-if="issues.length > 0">
         <h2>Or try one of these!</h2>
-        <ul class="availableIssuesBox">
-          <li v-for="issue in issuesShort" v-bind:key="issue.key">
-            <span class="repoMeta">{{getRepoName(issue.repository_url)}}</span>
-            <h3 class="issueTitle">{{limitString(issue.title, 64)}}</h3>
-            <span class="issueComments">
-              <font-awesome-icon icon="comments" />
-              {{issue.comments}}
-            </span>
-          </li>
-        </ul>
+        <section class="availableIssuesBox">
+          <a v-for="issue in issuesShort" v-bind:key="issue.key" :href="issue.html_url">
+              <span class="repoMeta">{{getRepoName(issue.repository_url)}}</span>
+              <h3 class="issueTitle">{{issue.title}}</h3>
+              <span class="issueComments">
+                <font-awesome-icon icon="comments" />
+                {{issue.comments}}
+              </span>
+          </a>
+        </section>
         <h2>Still looking for more?</h2>
         <p>View the full list of issues here</p>
         <a
@@ -30,7 +30,8 @@
 
 <style lang="scss">
 .issueList {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: $color-primary-dark;
+  margin-top: 2em;
 }
 .availableIssuesContainer {
   text-align: center;
@@ -44,7 +45,7 @@
     margin: 1.4em auto;
     font-size: 0.8em;
 
-    li {
+    a {
         display: flex;
         flex-direction: row;
         padding: 1em;
@@ -55,6 +56,8 @@
         text-overflow: ellipsis;
         white-space: wrap;
         transition: 0.3s;
+        text-decoration: none;
+        color: $color-white;
 
         &:hover {
             transform: scale(1.05);
@@ -63,6 +66,9 @@
         .issueTitle {
         min-width: 50%;
         font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         }
 
         .repoMeta {

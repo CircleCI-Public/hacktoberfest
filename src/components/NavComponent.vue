@@ -1,8 +1,15 @@
 <template>
-    <nav class="row container">
-        <div class="navMenu row">
-            <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link>
+    <nav class="row navComponent">
+        <div class="navMenu container row">
+            <figure id="footerLogo">
+                <img src="@/assets/circle-logo-horizontal-white.svg" width="100em"  height="auto" alt="CircleCI logo">
+            </figure>
+            <a href="#howToParticipate">How to participate</a>
+            <a href="#hacktoberfestOnCircleCI">Hacktoberfest on CircleCI</a>
+            <a href="#crystalBall">Find an issue</a>
+            <a href="#ResourceList">Resources</a>
+            <a href="#EventList">Events</a>
+            <a href="#OtherOpporunities">Other opportunities</a>
         </div>
       </nav>
 </template>
@@ -11,7 +18,24 @@
 
 </script>
 
-<style>
+<style lang="scss">
+.navComponent {
+    background-color: rgba(0,0,0,0.4);
+    margin-bottom: 1em;
+}
+.navMenu {
+    z-index: 10;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4em;
+    font-family: 'Kelly Slab', cursive;
 
+    * {
+        color: $color-white;
+        margin: 0 1em;
+        padding: 0.2em;
+    }
+}
 
 </style>

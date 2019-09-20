@@ -17,23 +17,24 @@ a {
 .hero {
     h1, h2, h3 {
         padding: 1rem;
+        line-height: 1.5em;
     }
     .col {
         display: flex;
         justify-content: center;
         align-items: center;
-
+        flex: 1;
     }
     
     .heroImage {
-        min-width: 30em;
         display: flex;
         justify-content: center;
         align-items: center;
 
         #OrbtoberfestThemeLogo {
-            transform: translateX(2em);
-            transform: scale(1.2);
+            display: block;
+            transform: translateX(2em) !important;
+            transform: scale(1.1);
         }
     }
 }
@@ -61,7 +62,7 @@ p {
 }
 
 .orbtoberfestLabel {
-    padding: 0.2em;
+    padding: 0.1em;
     margin: 0.1em;
     border-radius: 0.3em;
     background-color: $color-accent;
@@ -87,4 +88,17 @@ p {
     align-items: center;
     text-align: center;
     width: 12em;
+}
+
+.linkBlue {
+    color: $color-primary-light;
+}
+
+.gamaburst {
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    background: radial-gradient($color-accent-light, transparent 60%);
+    opacity: 0.7;
+    z-index: 0;
 }
