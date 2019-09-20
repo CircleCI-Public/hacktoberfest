@@ -1,0 +1,24 @@
+@import './reset.scss';
+@import './layout.scss';
+@import './variables.scss';
+@import './components.scss';
+
+@media only screen and (max-width: 800px) {
+    .row {
+        flex-direction: column;
+    }
+    .footerContainer .row {
+        align-items: center;
+    }
+    .gamaburst {
+        display: none;
+    }
+    .desktop-left {
+        text-align: center;
+    }
+  }
+
+  .desktop-left {
+    text-align: left;
+    align-self: flex-start;
+}

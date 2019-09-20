@@ -1,0 +1,104 @@
+a {
+    color: $color-accent-light;
+    font-weight: bold;
+}
+
+.ctaButton {
+    background-color: $color-secondary;
+    color: $color-white;
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-weight: bold;
+    border-radius: 0.1em;
+    text-decoration: none;
+    margin: 0.5em
+}
+
+.hero {
+    h1, h2, h3 {
+        padding: 1rem;
+        line-height: 1.5em;
+    }
+    .col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+    
+    .heroImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #OrbtoberfestThemeLogo {
+            display: block;
+            transform: translateX(2em) !important;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.participateRow {
+    border-radius: 0.3em;
+    background-color: rgba( 255,255,255, 0.1);
+    padding: 1.2em;
+
+    .dot {
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        border: 0.3em solid $color-secondary;
+        line-height: 2em;
+    }
+}
+
+p {
+    padding: 1em;
+}
+
+.parallax-container {
+    padding: 1em;
+}
+
+.orbtoberfestLabel {
+    padding: 0.1em;
+    margin: 0.1em;
+    border-radius: 0.3em;
+    background-color: $color-accent;
+    color: $color-white;
+    font-weight: bold;
+}
+.tipBoxRow {
+    display: flex;
+    padding: 1em;
+    
+    .col {
+        justify-content: center;
+        align-items: center;
+    }
+}
+.tipBox {
+    display: flex;
+    padding: 0.2em;
+    background-color: $color-accent;
+    border-radius: 0.2em;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 12em;
+}
+
+.linkBlue {
+    color: $color-primary-light;
+}
+
+.gamaburst {
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    background: radial-gradient($color-accent-light, transparent 60%);
+    opacity: 0.7;
+    z-index: 0;
+}
