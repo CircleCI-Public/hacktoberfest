@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="viewHome">
     <article class="col hero container">
       <div class="row mainHeroRow">
         <figure class="col">
@@ -13,16 +13,16 @@
         <div class="col">
           <div class="row heroLogos">
             <img src="@/assets/circle-logo-horizontal-white.svg" width="120em"  height="auto" alt="CircleCI logo">
-            <span>&</span>
+            <span id="heroAnd">&</span>
             <img src="@/assets/Hacktoberfest_19_Events_lockup_ko_300x100.png" width="120em"  height="auto" alt="Hacktoberfest logo">
           </div>
           <div class="row">
             <div class="col heroDescription">
               <h1>What is Hacktoberfest?</h1>
               <p>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean and DEV. It encourages individuals of all skill levels to engage with open source software during the month of October and is open to everyone in our global community.</p>
-              <p>This year, CircleCI invites you to contribute to our orbs open source project, which we’re calling <span class="fancyText">#Orbtoberfest</span></p>
+              <p>This year, CircleCI invites you to contribute to our orbs open source projects, which we’re calling <span class="fancyText">#Orbtoberfest</span>. Enter to earn extra limited-edition CircleCI swag!</p>
               <div class="row">
-                <a href="https://hacktoberfest.digitalocean.com/" class="ctaButton" id="heroLearnMore">Learn more</a>
+                <a href="#hacktoberfestOnCircleCI" class="ctaButton" id="heroLearnMore">Learn More</a>
                 <a href="#crystalBall" class="ctaButton" id="heroFindIssue">Find an issue</a>
               </div>
             </div>
@@ -43,17 +43,22 @@
           </div>
           <div class="col">
             <span class="dot">3</span>
-            <p>Click here for a full list of Hacktoberfest FAQs.</p>
+            <p>Click here for a full list of <a href="https://hacktoberfest.digitalocean.com/faq/">Hacktoberfest FAQs</a>.</p>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col hacktoberfestOnCircleCI">
+        <div class="col hacktoberfestOnCircleCI desktop-left">
           <a name="hacktoberfestOnCircleCI"></a>
-          <h1 class="desktop-left">What you win</h1>
-          <p>If you submit at least four valid PRs you will earn a limited-edition Hacktoberfest T-shirt.</p>
-          <h2 class="desktop-left">Bonus:</h2>
-          <p>If you complete all four of your PRs on CircleCI, <a href="https://docs.google.com/forms/d/1-MbzLy0m1eRLjeye9wu76fYkzcX5A3PvgKd09EhVObY/viewform">fill out this form to receive additional CircleCI Hacktoberfest swag</a> while supplies last.</p>
+          <h1>What you win</h1>
+          <p>If you submit at least four valid PRs you will earn a limited-edition Hacktoberfest T-shirt from DigitalOcean.</p>
+          <h2>Bonus:</h2>
+          <p>Participate in <span class="fancyText">#Orbtoberfest</span> with CircleCI and claim limited edition swag!</p>
+          <ul>
+            <li>1 - 3 pull requests: Limited-Edition Sticker</li>
+            <li>4+ pull requests: Limited-Edition T-shirt</li>
+          </ul>
+          <p>Once you have completed your PRs, submit the form below with links to each PR.</p>
           <a href="https://docs.google.com/forms/d/1-MbzLy0m1eRLjeye9wu76fYkzcX5A3PvgKd09EhVObY/viewform" class="ctaButton">Enter your PRs</a>
         </div>
         <figure class="col heroImage" id="swagCol">
@@ -62,12 +67,12 @@
       </div>
     </article>
     <article class="col hero container">
-      <h1>Participating in Hacktoberfest on CircleCI</h1>
+      <h1>Participating in Orbtoberfest on CircleCI</h1>
       <div class="row">
-        <div class="col">
+        <div class="col desktop-left">
           <p>Contributing to <a href="https://circleci.com/orbs/">CircleCI orbs</a> is one easy way to complete the Hacktoberfest challenge. CircleCI orbs are open source, reusable packages of config that can help speed up development and connect your favorite tools to your CI pipeline. </p>
         </div>
-        <div class="col">
+        <div class="col desktop-left">
           <p>Check out a few ideas for how to complete your Hacktoberfest PRs on CircleCI by modifying an existing orb below. Once you’ve successfully modified an orb, be sure to fill out <a href="https://docs.google.com/forms/d/1-MbzLy0m1eRLjeye9wu76fYkzcX5A3PvgKd09EhVObY/viewform">this Google form</a> to receive CircleCI Hacktoberfest swag.</p>
         </div>
       </div>
@@ -85,14 +90,15 @@
           <p>If you are an orb author, make sure your repository is properly tagged with the ‘circleci-orbs’ topic. We encourage authors to open issues for their orb and tag those issues with <span class="orbtoberfestLabel">‘orbtoberfest’</span> and <span class="orbtoberfestLabel">‘hacktoberfest.’</span> </p>
         </div>
         <div class="containerSmall">
-            <p>Join the #orbtoberfest discussion on our community forum for ideas, additional information, and to ask any questions. View Discuss Post Button with LINK TO DISCUSS POST </p>
+            <p>Join the <span class="fancyText">#orbtoberfest</span> discussion on our community forum for ideas, additional information, and to ask any questions.</p>
+            <a href="https://discuss.circleci.com/t/participate-in-hacktoberfest-on-circleci/32557" class="ctaButton">Join discussion</a>
         </div>
       </div>
     </div>
     <a name="crystalBall"></a>
     <CrystalBall :issues="issues" :errors="errors" />
     <IssueList :issues="issues" :errors="errors" />
-    <section class="col hero container">
+    <section class="col hero container ResourceList">
       <a name="ResourceList"></a>
       <h2>Get Started with CircleCI</h2>
       <div class="row">
@@ -193,8 +199,9 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
 
-#app {
+#viewHome {
   overflow: hidden;
+  margin-top: 2em;
 }
 
 h1, h2, h3 {
@@ -236,7 +243,7 @@ h2 {
   width: 100%;
   padding: 0.5em;
   margin: 0.2em;
-  background-color: $color-primary-light;
+  background-color: #27A0B6;
   color: $color-white;
   border-radius: 0.1em;
 }
@@ -262,10 +269,9 @@ h2 {
   padding-top: 2rem;
   .container {
     .row {
-      justify-content: baseline;
-
         .col {
           padding: 2em;
+          justify-content: flex-start;
         }
     }
   }
@@ -294,11 +300,23 @@ h2 {
   font-weight: bold;
 }
 
+.ResourceList {
+  margin-top: 2em;
+}
+
 .hacktoberfestOnCircleCI {
   margin: 2em 0;
   h2, p {
     padding: 0.4em;
   }
+  ul {
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+#heroAnd {
+  margin-left: 0.35em;
 }
 
 </style>

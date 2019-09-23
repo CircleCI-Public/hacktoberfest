@@ -641,6 +641,7 @@ export default {
   text-align: center;
   position: relative;
 
+
   .sunburst {
     z-index: 0;
     position: absolute;
