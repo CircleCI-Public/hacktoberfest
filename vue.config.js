@@ -5,9 +5,6 @@ module.exports = {
       return [options]
     })
   },
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/hacktoberfest/'
-    : '/',
   css: {
     loaderOptions: {
       sass: {

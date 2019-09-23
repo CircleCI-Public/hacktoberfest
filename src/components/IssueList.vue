@@ -31,18 +31,18 @@
 <style lang="scss">
 .issueList {
   background-color: $color-primary-dark;
-  margin-top: 2em;
+  margin: 2em 0;
+  padding-bottom: 2em;
 }
 .availableIssuesContainer {
   text-align: center;
-  font-size: 0.8em;
   padding: 1.2em;
 
   .availableIssuesBox {
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 1.4em auto;
+    margin: 2em auto;
     font-size: 0.8em;
 
     a {
