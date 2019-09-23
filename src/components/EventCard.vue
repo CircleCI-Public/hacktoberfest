@@ -4,7 +4,7 @@
             <h3>{{eventMonth}} {{eventDay}}</h3>
             <h2>{{location}}</h2>
         </div>
-        <a :href="link" class="ctaButton">Learn more</a>
+        <a :href="this.link" class="ctaButton">Learn more</a>
     </article>
 </template>
 
