@@ -11,7 +11,7 @@ a {
     font-weight: bold;
     border-radius: 0.1em;
     text-decoration: none;
-    margin: 0.5em
+    margin: 0.8em 0.5em;
 }
 
 .hero {
@@ -33,7 +33,7 @@ a {
 
         #OrbtoberfestThemeLogo {
             display: block;
-            transform: translateX(2em) !important;
+            transform: translateX(1em) !important;
             transform: scale(1.1);
         }
     }

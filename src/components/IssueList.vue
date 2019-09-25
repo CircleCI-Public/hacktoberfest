@@ -31,7 +31,6 @@
 <style lang="scss">
 .issueList {
   background-color: $color-primary-dark;
-  margin: 2em 0;
   padding-bottom: 2em;
 }
 .availableIssuesContainer {

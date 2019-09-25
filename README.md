@@ -32,3 +32,25 @@ npm run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+---
+## For Dev
+
+1. Open `vue.config.js`.
+2. Comment out the following lines.
+
+```
+  publicPath: process.env.NODE_ENV === 'production'
+  ? '/hacktoberfest/'
+  : '/',
+  chainWebpack: config => {
+    config.plugin('optimize-css').tap(([options]) => {
+      options.cssnanoOptions.preset[1].svgo = false
+      return [options]
+    })
+  },
+```
+3. Remove comments for production.
+---
+

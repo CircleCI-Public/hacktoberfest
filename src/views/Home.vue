@@ -6,7 +6,7 @@
           <div class="gamaburst" id="gb1"></div>
           <div class="gamaburst" id="gb2"></div>
           <div class="gamaburst" id="gb3"></div>
-          <parallax-container class="col"><parallax-element :parallaxStrength="20" :type="'depth'" class="col heroImage">
+          <parallax-container class="col"><parallax-element :parallaxStrength="30" :type="'depth'" class="col heroImage">
             <img src="@/assets/orbtoberfest-header_graphic.svg" alt="CircleCI Orbtoberfest" id="OrbtoberfestThemeLogo">
           </parallax-element></parallax-container>
         </figure>
@@ -35,7 +35,7 @@
         <div class="row participateRow">
           <div class="col">
             <span class="dot">1</span>
-            <p>Register for hacktoberfest at <a href="https://hacktoberfest.digitalocean.com/">hacktoberfest.digitalocean.com/</a>.</p>
+            <p>Register for hacktoberfest at <a href="https://hacktoberfest.digitalocean.com/">hacktoberfest.digitalocean.com</a>.</p>
           </div>
           <div class="col">
             <span class="dot">2</span>
@@ -84,7 +84,7 @@
         <div class="col"><div class="tipBox"><p>Update or add <a href="https://circleci.com/docs/2.0/orb-author/#providing-usage-examples-of-orbs" class="linkBlue">usage examples</a> in orb source.</p></div></div>
       </div>
     </article>
-    <div class="row container hero">
+    <div id="orbAuthors" class="row container hero">
       <div class="col">
         <div class="containerSmall">
           <p>If you are an orb author, make sure your repository is properly tagged with the ‘circleci-orbs’ topic. We encourage authors to open issues for their orb and tag those issues with <span class="orbtoberfestLabel">‘orbtoberfest’</span> and <span class="orbtoberfestLabel">‘hacktoberfest.’</span> </p>
@@ -116,23 +116,23 @@
     <section class="col container" id="eventContainer">
       <a name="EventList"></a>
       <h2>Events</h2>
-      <p>CircleCI is hosting meetups around the country to encourage participation in Hacktoberfest. Come learn how to complete the challenge and network with other open source contributors at one of our upcoming events:</p>
+      <p class="containerSmall">CircleCI is hosting meetups around the country to encourage participation in Hacktoberfest. Come learn how to complete the challenge and network with other open source contributors at one of our upcoming events:</p>
       <div class="row">
         <div class="col">
-          <EventCard eventMonth="October" eventDay="10" link="https://www.eventbrite.com/e/hacktoberfest-2019-open-hack-virtual-meetup-tickets-73459933639" location="Virtual Event" />
+          <EventCard eventMonth="October" eventDay="10" link="https://www.eventbrite.com/e/hacktoberfest-2019-open-hack-virtual-meetup-tickets-73459933639" location="Virtual Event" sponsor="circleci" />
         </div>
         <div class="col">
-          <EventCard eventMonth="October" eventDay="15" link="https://www.eventbrite.com/e/hacktoberfest-open-hack-night-in-seattle-tickets-73458651805" location="Seattle, WA" />
+          <EventCard eventMonth="October" eventDay="15" link="https://www.eventbrite.com/e/hacktoberfest-open-hack-night-in-seattle-tickets-73458651805" location="Seattle, WA" sponsor="pulumi"/>
         </div>
         <div class="col">
-          <EventCard eventMonth="October" eventDay="28" link="https://www.eventbrite.com/e/hacktoberfest-open-hack-night-in-new-york-tickets-73438308959" location="New York, NY" />
+          <EventCard eventMonth="October" eventDay="28" link="https://www.eventbrite.com/e/hacktoberfest-open-hack-night-in-new-york-tickets-73438308959" location="New York, NY" sponsor="snyk"/>
         </div>
       </div>
     </section>
     <section class="col hero opportunitySection">
-      <div class="col container">
+      <div class="col container desktop-left">
         <a name="OtherOpporunities"></a>
-        <h2 class="desktop-left">Other CircleCI and Hacktoberfest opportunities</h2>
+        <h2>Other CircleCI and Hacktoberfest opportunities</h2>
           <div class="row">
             <div class="col">
               <h3 class="desktop-left">Create your own orb</h3>
@@ -154,9 +154,11 @@
 import axios from 'axios'
 import Vue from 'vue'
 import VueMouseParallax from 'vue-mouse-parallax'
+import Meta from 'vue-meta'
 
  
 Vue.use(VueMouseParallax)
+Vue.use(Meta)
 // mixins
 // components
 import CrystalBall from '@/components/CrystalBall.vue'
@@ -172,6 +174,37 @@ export default {
     EventCard,
     ParallaxContainer,
     ParallaxElement
+  },
+  metaInfo: {
+    title: 'CircleCI 2019 Hacktoberfest | #Orbtoberfest',
+    meta: [
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {name: 'description', content: 'Earn Limited-Edition CircleCI swag through the month of October. Join CircleCI during Hacktoberfest and contribute to open-source "orbs".'},
+      // OpenGraph data (Most widely used)
+      {property: 'og:title', content: 'CircleCI 2019 Hacktoberfest | #Orbtoberfest'},
+      {property: 'og:site_name', content: 'CircleCI Hacktoberfest'},
+      // The list of types is available here: http://ogp.me/#types
+      {property: 'og:type', content: 'website'},
+      // Should the the same as your canonical link, see below.
+      {property: 'og:url', content: 'https://circleci-public.github.io/hacktoberfest'},
+      {property: 'og:image', content: '@assets/swag-mockup.png'},
+      // Often the same as your meta description, but not always.
+      {property: 'og:description', content: 'Earn Limited-Edition CircleCI swag through the month of October. Join CircleCI during Hacktoberfest and contribute to open-source "orbs".'},
+
+      // Twitter card
+      {name: 'twitter:card', content: 'summary'},
+      {name: 'twitter:site', content: 'https://circleci-public.github.io/hacktoberfest'},
+      {name: 'twitter:title', content: 'CircleCI 2019 Hacktoberfest | #Orbtoberfest'},
+      {name: 'twitter:description', content: 'Earn Limited-Edition CircleCI swag through the month of October. Join CircleCI during Hacktoberfest and contribute to open-source "orbs".'},
+      // Your twitter handle, if you have one.
+      {name: 'twitter:creator', content: '@CircleCI'},
+      {name: 'twitter:image:src', content: '@assets/swag-mockup.png'},
+
+      // Google / Schema.org markup:
+      {itemprop: 'name', content: 'CircleCI 2019 Hacktoberfest | #Orbtoberfest'},
+      {itemprop: 'description', content: 'Earn Limited-Edition CircleCI swag through the month of October. Join CircleCI during Hacktoberfest and contribute to open-source "orbs".'},
+      {itemprop: 'image', content: '@assets/swag-mockup.png'}
+      ],
   },
   data() {
     return {
@@ -201,7 +234,7 @@ export default {
 
 #viewHome {
   overflow: hidden;
-  margin-top: 2em;
+  padding-top: 5em;
 }
 
 h1, h2, h3 {
@@ -317,6 +350,10 @@ h2 {
 
 #heroAnd {
   margin-left: 0.35em;
+}
+
+#orbAuthors {
+  margin: 3em auto;
 }
 
 </style>

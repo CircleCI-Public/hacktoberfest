@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
 
-import getRepoName from '@/mixins/getRepoName'
+import getRepoName from './mixins/getRepoName'
+Vue.mixin(getRepoName)
+
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faComments, faGlobe } from "@fortawesome/free-solid-svg-icons"
@@ -19,7 +21,7 @@ library.add(faFacebook)
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false
-Vue.mixin(getRepoName)
+
 
 new Vue({
   router,

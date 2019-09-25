@@ -1,7 +1,7 @@
 <template>
     <nav id="navComponent" class="row">
-        <div class="navMenu container row">
-            <figure id="footerLogo">
+        <div class="navMenu row">
+            <figure id="navLogo">
                 <img src="@/assets/circle-logo-horizontal-white.svg" width="100em"  height="auto" alt="CircleCI logo">
             </figure>
             <a href="#howToParticipate">How to participate</a>
@@ -22,6 +22,11 @@
 #navComponent {
     background-color: $color-primary-dark;
     z-index: 50;
+    white-space: nowrap;
+
+    #navLogo {
+        transform: translateY(0.2em);
+    }
 
     #eventNav {
         &:before {
@@ -31,7 +36,7 @@
             height: 0.4em;
             border-radius: 50%;
             background-color: $color-tertiary;
-            margin: 0.1em;
+            margin: 0.1em 0.2em;
         }
     }
 }

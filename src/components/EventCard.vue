@@ -5,12 +5,22 @@
             <h2>{{location}}</h2>
         </div>
         <a :href="this.link" class="ctaButton">Learn more</a>
+        <div class="sponsorImage">
+            <span>Special Sponsor</span>
+            <img :src="require(`@/assets/${sponsor}-logo.png`)" v-bind:alt="this.sponsor">
+        </div>
     </article>
 </template>
 
 <style lang="scss">
 
 .eventCard {
+
+    .sponsorImage {
+        max-width: 8em;
+        opacity: 0.6;
+        margin-top: 2em;
+    }
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -34,7 +44,7 @@
 
 <script>
 export default {
-    props: ['eventMonth', 'eventDay', 'location', 'link'],
+    props: ['eventMonth', 'eventDay', 'location', 'link', 'sponsor'],
 }
 
 </script>

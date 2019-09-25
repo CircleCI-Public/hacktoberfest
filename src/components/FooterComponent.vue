@@ -1,6 +1,7 @@
 <template>
     <footer class="footerContainer">
-        <div class="row container">
+        <div class="col container">
+            <div class="row">
             <figure id="footerLogo">
                 <img src="@/assets/circle-logo-horizontal-white.svg" width="100em"  height="auto" alt="CircleCI logo">
             </figure>
@@ -25,6 +26,8 @@
                <span>© 2019 Circle Internet Services, Inc., All Rights Reserved</span>
             </div>
         </div>
+        </div>
+        
     </footer>
 </template>
 <script>
