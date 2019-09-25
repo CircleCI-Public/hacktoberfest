@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/hacktoberfest/precache-manifest.f801e55160c731c40f455da02f67a560.js"
+  "/hacktoberfest/precache-manifest.a845bd7838a3bd6a6f1b6fb1346ec7b1.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "hacktoberfest"});

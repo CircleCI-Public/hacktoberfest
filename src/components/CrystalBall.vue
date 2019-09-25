@@ -2,7 +2,7 @@
   <section class="col container crystalBallComponent">
     <div class="sunburst" v-bind:class="{animateSpin: toggle}"></div>
     <h1 id="findIssue">Find an issue</h1>
-    <section class="fortuneContainer container">
+    <section class="fortuneContainer">
       <article class="fortuneBox" v-if="this.clicked" v-bind:class="{animateHideBox: toggle}">
         <header>
           <h2>{{randomIssue.title}}</h2>
@@ -600,10 +600,10 @@ export default {
 
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1.2);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.2);
   }
 }
 
@@ -686,13 +686,14 @@ export default {
 
 .fortuneContainer {
   position: absolute;
-  left: 10%;
-  transform: translateY(6em);
-  font-size: 0.8em;
+  width: 40em;
+  left: 50%;
+  margin-left: -20em;
+  transform: translateY(7em);
+  font-size: 0.6em;
   background-color: transparent;
   border: 0.1em solid $color-secondary;
   border-radius: 0.3em;
-  width: 80%;
   max-height: 15em;
   overflow: hidden;
 
