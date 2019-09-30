@@ -119,7 +119,7 @@
       <p class="containerSmall">CircleCI is hosting meetups around the country to encourage participation in Hacktoberfest. Come learn how to complete the challenge and network with other open source contributors at one of our upcoming events:</p>
       <div class="row">
         <div class="col">
-          <EventCard eventMonth="October" eventDay="10" link="https://www.eventbrite.com/e/hacktoberfest-2019-open-hack-virtual-meetup-tickets-73459933639" location="Virtual Event" sponsor="circleci" />
+          <EventCard eventMonth="October" eventDay="10" link="https://www2.circleci.com/Hacktoberfest-2019-Open-Hack-Virtual-Meetup.html" location="Virtual Event" sponsor="circleci" />
         </div>
         <div class="col">
           <EventCard eventMonth="October" eventDay="15" link="https://www.eventbrite.com/e/hacktoberfest-open-hack-night-in-seattle-tickets-73458651805" location="Seattle, WA" sponsor="pulumi"/>
