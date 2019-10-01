@@ -5,6 +5,12 @@ module.exports = {
       return [options]
     })
   },
+  pwa: {
+    iconPaths: {
+      favicon32: 'favicon.ico',
+      favicon16: 'favicon.ico',
+    }
+  },
   css: {
     loaderOptions: {
       sass: {
