@@ -53,7 +53,7 @@
           <h1>What you win</h1>
           <p>If you submit at least four valid PRs you will earn a limited-edition Hacktoberfest T-shirt from DigitalOcean.</p>
           <h2>Bonus:</h2>
-          <p>Participate in <span class="fancyText">#Orbtoberfest 2019</span> with CircleCI and claim limited edition swag!</p>
+          <p>Participate in <span class="fancyText">#Orbtoberfest</span> 2019 with CircleCI and claim limited edition swag!</p>
           <ul>
             <li>1 - 3 pull requests: Limited-Edition Sticker</li>
             <li>4+ pull requests: Limited-Edition T-shirt</li>
