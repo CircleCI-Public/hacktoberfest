@@ -1,6 +1,6 @@
 <template>
   <section class="col container crystalBallComponent">
-    <div class="sunburst" v-bind:class="{animateSpin: toggle}"></div>
+    <div class="sunburst" ref="sunburst" v-bind:class="{animateSpin: toggle}"></div>
     <h1 id="findIssue">Find an issue</h1>
     <section class="fortuneContainer">
       <article class="fortuneBox" v-if="this.clicked" v-bind:class="{animateHideBox: toggle}">
@@ -425,12 +425,18 @@ export default {
   },
 
   props: ["issues", "errors"],
-
+  mounted() {
+    this.$refs.sunburst.addEventListener('animationend', this.resetToggle)
+  },
+  beforeDestroy() {
+    this.$refs.sunburst.removeEventListener('animationend', this.resetToggle)
+  },
   methods: {
     getRandomIssue: function() {
+      if (this.toggle) { return }
       this.toggle = !this.toggle
       this.clicked = true
-      
+
       if (this.errors.length > 0) {
         this.randomIssue = {
           title: "Error! Unable to fetch issues",
@@ -441,6 +447,9 @@ export default {
           Math.floor(Math.random() * Math.floor(this.issues.length))
         ];
       }
+    },
+    resetToggle() {
+      this.toggle = false
     }
   }
 };
