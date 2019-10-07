@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/img/hacktober19_swag-mockup.5c199128.png"
   },
   {
-    "revision": "0b4b4a9dbf8390b11721",
-    "url": "/js/app.d31f23f1.js"
+    "revision": "dcd95a4e966b409a2d83",
+    "url": "/js/app.ab3178fd.js"
   },
   {
     "revision": "51db5d1085d145fea529",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/js/about.58cde4c3.js"
   },
   {
-    "revision": "66c5851a1059920182430f3aa8b6bfd1",
+    "revision": "280944da6de8a0327b3da3811d137699",
     "url": "/index.html"
   },
   {
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-vendors.2b10fbaa.css"
   },
   {
-    "revision": "0b4b4a9dbf8390b11721",
+    "revision": "dcd95a4e966b409a2d83",
     "url": "/css/app.0a88b0cc.css"
   }
 ];
