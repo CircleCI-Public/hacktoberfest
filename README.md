@@ -41,9 +41,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 2. Comment out the following lines.
 
 ```
-  publicPath: process.env.NODE_ENV === 'production'
-  ? '/hacktoberfest/'
-  : '/',
   chainWebpack: config => {
     config.plugin('optimize-css').tap(([options]) => {
       options.cssnanoOptions.preset[1].svgo = false
