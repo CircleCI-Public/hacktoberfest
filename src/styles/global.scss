@@ -14,11 +14,14 @@
         text-align: left;
         align-self: flex-start;
     }
-    
+
 }
 
 @media only screen and (max-width: 860px) {
     .row {
+        flex-direction: column;
+    }
+    .footerContainer .row ul {
         flex-direction: column;
     }
     .footerContainer .row {
