@@ -49,6 +49,8 @@ export default {
     .footerLinksRow {
         li {
             margin: 0.2em 1em;
+            font-size: 100%;
+
         }
     }
     
