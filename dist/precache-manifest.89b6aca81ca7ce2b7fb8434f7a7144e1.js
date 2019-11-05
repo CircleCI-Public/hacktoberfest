@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/img/hacktober19_swag-mockup.5c199128.png"
   },
   {
-    "revision": "dcd95a4e966b409a2d83",
-    "url": "/js/app.ab3178fd.js"
+    "revision": "428ad557d639f3cc832a",
+    "url": "/js/app.c45fed48.js"
   },
   {
     "revision": "51db5d1085d145fea529",
     "url": "/js/chunk-vendors.be1dfefc.js"
   },
   {
-    "revision": "66f8046f7b8231e423c2",
-    "url": "/js/about.58cde4c3.js"
+    "revision": "271bd042a7eabbe71c57",
+    "url": "/js/about.e801bb4c.js"
   },
   {
-    "revision": "280944da6de8a0327b3da3811d137699",
+    "revision": "c0253074d5a36df6de2cc0206e3d94de",
     "url": "/index.html"
   },
   {
@@ -48,11 +48,15 @@ self.__precacheManifest = [
     "url": "/img/circle-logo-horizontal-white.59142f9d.svg"
   },
   {
+    "revision": "a40f62795cc4c0bf507b1fe95f887eeb",
+    "url": "/google05b90450be120506.html"
+  },
+  {
     "revision": "51db5d1085d145fea529",
     "url": "/css/chunk-vendors.2b10fbaa.css"
   },
   {
-    "revision": "dcd95a4e966b409a2d83",
+    "revision": "428ad557d639f3cc832a",
     "url": "/css/app.0a88b0cc.css"
   }
 ];
