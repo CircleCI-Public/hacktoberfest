@@ -60,6 +60,7 @@ ol[class] {
 /* Make images easier to work with */
 img {
     max-width: 100%;
+    width: 100%;
     display: block;
   }
 
@@ -144,6 +145,10 @@ a {
     font-weight: bold;
 }
 
+hr {
+    width: 100%;
+}
+
 #navList {
     padding: 0;
     list-style: none;
@@ -151,6 +156,17 @@ a {
     justify-content: space-between;
     flex: 2;
 }
+
+#navList a {
+    color: white;
+    padding: 1em;
+}
+
+#navList a:active, a:hover {
+    border-bottom: 0.3em solid var(--accent-pink);
+}
+
+
 #navLogo {
     flex: 1;
     text-align: left;
@@ -309,9 +325,25 @@ a {
     background-color: var(--accent-gold);
 }
 
+#sponsorBox {
+    align-items: center;
+}
+
+#sponsorBox > img+span{
+    display: flex;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+}
+
 footer {
     margin-top: 2em;
     background-color: var(--main-dark-blue);
+}
+
+.logo {
+    max-width: 10em;
+    color: white;
 }
 
 @media only screen and (max-width: 812px) {
@@ -328,5 +360,8 @@ footer {
 
     #navList {
         flex-direction: column;
+    }
+    #navList li{
+        margin: 1em;
     }
   }
