@@ -337,8 +337,46 @@ hr {
 }
 
 footer {
+    display: flex;
     margin-top: 2em;
     background-color: var(--main-dark-blue);
+}
+
+footer ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+footer li {
+    list-style: none;
+    margin-right: 1em;
+}
+
+.footernav a{
+    color: white;
+}
+
+.copywrite {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#footerLogo {
+    display: flex;
+    flex: 1;
+}
+
+.footerSocialIcons {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+.socialIcon {
+    padding: 1em;
+    color: white;
 }
 
 .logo {
