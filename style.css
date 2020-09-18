@@ -221,10 +221,6 @@ hr {
     padding: 1.5em;
 }
 
-.eventBox > .eventBoxHeading {
-    flex: 2;
-}
-
 .threesteps {
     align-items: center;
 }
@@ -251,6 +247,24 @@ hr {
 #challengeBlocks {
     align-items: flex-start;
     margin-bottom: 4em;
+}
+
+.background-element-container {
+    position: relative;
+}
+
+#background-element-logo {
+    position: absolute;
+    display: block;
+    width: 50em;
+    height: 50em;
+    left: -40em;
+    top: -10em;
+    background-image: url(img/Hacktoberfest20-logo.svg);
+    z-index: -1;
+    background-repeat: no-repeat;
+    opacity: 50%;
+
 }
 
 .effect-stars-group {
@@ -383,6 +397,16 @@ footer li {
     max-width: 10em;
     color: white;
 }
+
+#sponsorList {
+    padding: 4em;
+    list-style: none;
+}
+
+#sponsorList li {
+    padding: 0.5em;
+}
+
 
 @media only screen and (max-width: 812px) {
     .row {
