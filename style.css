@@ -162,7 +162,7 @@ hr {
     padding: 1em;
 }
 
-#navList a:active, a:hover {
+#navList  a:hover {
     border-bottom: 0.3em solid var(--accent-pink);
 }
 
