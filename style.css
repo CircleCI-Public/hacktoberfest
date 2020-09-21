@@ -49,6 +49,7 @@ body {
 html {
     margin: 0;
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -106,7 +107,14 @@ section {
     display: flex;
     flex-direction: column;
     flex: 1;
-    width: 100%
+    width: 100%;
+}
+
+.col2 {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 2;
+  width: 20%;
 }
 
 .col.padded {
@@ -120,7 +128,7 @@ section {
 /* Components */
 
 .wrapper {
-    max-width: 900px;
+    max-width: 1000px;
     flex: 1;
     align-items: center;
 }
@@ -128,12 +136,20 @@ section {
 h1 {
     color: var(--accent-gold);
     font-family: 'Libre Baskerville', serif;
-    font-size: 2.4em;
+    font-size: 2.8em;
 }
 h2 {
     color: var(--accent-light-blue);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.6em;
+}
+h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 p {
     margin: 1em 0 1.5em 0;
@@ -172,6 +188,10 @@ hr {
     text-align: left;
 }
 
+.animation {
+  position: absolute;
+}
+
 .subheader {
     font-size: 1em;
     color: white;
@@ -185,13 +205,14 @@ hr {
 }
 
 .btn {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     padding: 0.5em 2em;
     color: white;
     border-radius: var(--rounded-edge);
+    border: 0.15em solid var(--btn-blue);
     background-color: var(--btn-blue);
-    font-weight: normal;
+    font-weight: 600;
 }
 
 .btn.btn-outline {
@@ -203,34 +224,42 @@ hr {
     border-color: transparent;
     background-color: var(--accent-pink);
 }
+
 .btn-group > .btn {
     flex: 1;
-    margin: 1em;
+    margin: 1em 1em 1em 0;
 }
 
 
 .darkRow {
     background-color: var(--main-dark-blue);
-    padding: 4em 0;
+    padding: 2em 0 7em 0;
     text-align: center;
 }
 
 .eventBox {
     background-color: var(--main-dark-blue);
     margin: 1em 0;
-    padding: 1.5em;
+    padding: 3em;
+    border-radius: var(--rounded-edge);
+}
+
+.eventBoxHeading {
+  padding: 0;
 }
 
 .threesteps {
     align-items: center;
+
 }
 
 .threesteps img{
     width: 60%;
+    max-width: 200px;
 }
 
-.col1-2 {
-    max-width: 50%;
+.col-9 {
+    max-width: 75%;
     align-self: center;
 }
 
@@ -246,7 +275,6 @@ hr {
 
 #challengeBlocks {
     align-items: flex-start;
-    margin-bottom: 4em;
 }
 
 .background-element-container {
@@ -263,7 +291,7 @@ hr {
     background-image: url(img/Hacktoberfest20-logo.svg);
     z-index: -1;
     background-repeat: no-repeat;
-    opacity: 50%;
+    opacity: 30%;
 
 }
 
@@ -341,6 +369,7 @@ hr {
 
 #sponsorBox {
     align-items: center;
+    padding: 0 4em;
 }
 
 #sponsorBox > img+span{
@@ -348,6 +377,7 @@ hr {
     flex: 1;
     text-align: center;
     justify-content: center;
+    padding: 1em;
 }
 
 footer {
@@ -399,13 +429,14 @@ footer li {
 }
 
 #sponsorList {
-    padding: 4em;
+    padding: 0;
     list-style: none;
 }
 
 #sponsorList li {
-    padding: 0.5em;
+    padding: 0.5em 0;
 }
+
 
 
 @media only screen and (max-width: 812px) {
@@ -420,10 +451,33 @@ footer li {
         width: 90% !important;
     }
 
+    .btn-group > .btn {
+        flex: 1;
+        margin: .5em 0;
+    }
+
+    .animation {
+      position: static;
+    }
+
+    .darkRow {
+        padding: 2em 0;
+    }
+
+    .col2 {
+      width: 100%;
+      margin-top: 2em;
+    }
+
     #navList {
         flex-direction: column;
     }
     #navList li{
         margin: 1em;
+    }
+
+    #sponsorBox {
+        align-items: center;
+        padding-top: 2em;
     }
   }

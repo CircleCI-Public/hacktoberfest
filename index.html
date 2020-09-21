@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="webfonts/https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="inter.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="css/all.css" rel="stylesheet">
     <title>Hacktoberfest 2020 with CircleCI | Orbtoberfest</title>
@@ -29,8 +29,8 @@
           <section class="row wrapper">
               <div class="col padded">
                     <div class="col">
-                    <h2 class="subheader">CIRCLECI & HACKTOBERFEST</h2>
-                    <a name="home"><h1>Hacktoberfest 2020</h1></a>
+                    <a name="home"><h3>CircleCI & Hacktoberfest</h2></a>
+                    <h1>Hacktoberfest 2020</h1>
                     </div>
                     <p>
                         Hacktoberfest is a month-long contest beginning October 1, run by DigitalOcean, DEV, and Intel. Whether you’re new to development or a long-time contributor, anyone can participate and help grow the open source community.
@@ -50,7 +50,7 @@
 
               </div>
               <div class="col padded">
-                  <div class="col" id="logoImage">
+                  <div class="animation" id="logoImage">
                   </div>
               </div>
           </section>
@@ -79,7 +79,7 @@
                 </div>
               </div>
           </section>
-          <section class="row padded wrapper">
+          <a name="prizes"><section class="row padded wrapper"></a>
               <div class="col padded">
                 <div class="effect-stars-group">
                     <div class="star-effect" id="star-1"></div>
@@ -88,7 +88,7 @@
                 <img src="./img/swag-mock.png" alt="">
               </div>
               <div class="col padded">
-                  <a name="prizes"><h1>What you win</h1></a>
+                  <h1>What you win</h1>
                   <p>Participants who meet the challenge will win a limited edition Hacktoberfest T-shirt from Digital Ocean, or the option to plant a tree instead, in an effort to help offset carbon emissions.</p>
                   <h2>CircleCI's bonus challenge</h2>
                   <p>
@@ -101,7 +101,7 @@
                   <p>Once you've completed your PRs, submit the links using the form below.</p>
               </div>
           </section>
-          <section class="row">
+          <a name="participate"><section class="row"></a>
               <div class="col wrapper">
                   <div class="row">
                     <section class="row">
@@ -111,21 +111,21 @@
                                 <div class="star-effect" id="star-4"></div>
                                 <div class="star-effect" id="star-5"></div>
                             </div>
-                            <a name="participate"><h1>How to participate in Orbtoberfest on CircleCI</h1></a>
+                            <h1>How to participate in Orbtoberfest on CircleCI</h1>
                         </div>
-                        <div class="col padded">
+                        <div class="col">
                             <p>Contributing to <a href="https://circleci.com/orbs/">CircleCI orbs</a> is an easy way to complete the Hacktoberfest challenge.</p>
                             <p>Choose one of the challenges below to participate. Once you’ve successfully updated an orb, fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY5ku8g_Q71WV6a65dhQT06mE2CMwrOco-fBYd4wX9eSUQDA/closedform">this form</a> to receive your swag.</p>
                         </div>
                     </section>
                   </div>
-                  <div class="row padded">
+                  <div class="row">
                     <div class="col">
                         <section class="row" id="challengeBlocks">
                             <div class="col padded">
                               <h2>Challenge 1</h2>
                               <p>Complete a merged or accepted PR to include orb usage on an existing CircleCI config.</p>
-                              <h3 class="subheader">PRIZES:</h3>
+                              <h3 class="">Prizes:</h3>
                               <ul>
                                   <li>1-3 PRs receive a sticker pack</li>
                                   <li>4 PRs receive stickers and a T-Shirt</li>
@@ -134,15 +134,15 @@
                             <div class="col padded">
                               <h2>Challenge 2</h2>
                               <p>Develop and publish an orb using the Orb Developer Kit. Make sure your orb offers value to other developers!</p>
-                              <h3 class="subheader">PRIZES:</h3>
+                              <h3 class="">Prizes:</h3>
                               <ul>
-                                  <li>A Sticker pack and limited edition orb magic pin!</li>
+                                  <li>Sticker pack</li>
+                                  <li>T-shirt</li>
+                                  <li>Limited edition orb magic pin!</li>
                               </ul>
                             </div>
-                        </section>
-                        <section class="row padded col1-2 centered">
                             <div class="col padded">
-                                <div class="row centered">
+                                <div style="padding-bottom: 2em; " class="row centered">
                                     <a href="#" class="btn">Enter your PRs</a>
                                 </div>
                                 <div class="row centered">
@@ -157,10 +157,10 @@
                 </div>
               </div>
           </section>
-          <section class="row">
+          <a name="events"><section class="row"></a>
               <div class="col wrapper">
                 <div class="row">
-                    <a name="events" id="eventsHeader"><h1>Events</h1></a>
+                    <h1 id="eventsHeader">Events</h1>
                     <div class="effect-stars-group">
                         <div class="star-effect" id="star-6"></div>
                         <div class="star-effect" id="star-7"></div>
@@ -169,36 +169,36 @@
                 </div>
                 <div class="row eventBox">
                   <div class="col eventBoxHeading">
-                      <h3 class="subheader">SEPTEMBER 23</h3>
+                      <h3 class="">September 23</h3>
                       <h2>Community Livestream</h2>
                       <span class="eventTime">00:00PM EST</span>
                   </div>
-                  <div class="col"></div>
-                  <div class="col">
+                  <div class="col2">
                       <a href="" class="btn btn-outline">Learn More</a>
                   </div>
                 </div>
                 <div class="row eventBox">
                   <div class="col eventBoxHeading">
-                      <h3 class="subheader">SEPTEMBER 23</h3>
+                      <h3>September 23</h3>
                       <h2>The State of Open Source featuring DigitalOcean, Hashicorp, and Spotify</h2>
                       <span class="eventTime">00:00PM EST</span>
                   </div>
-                  <div class="col centered">
-                    <h3 class="subheader">special sponsor</h3>
+                  <div class="col">
+                    <h3 class="">Special sponsors</h3>
                     <ul id="sponsorList">
-                        <li><img src="img/DigitalOcean.png" alt="DigitalOcean"></li>
-                        <li><img src="img/HashiCorp.png" alt="HashiCorp"></li>
-                        <li><img src="img/Spotify.png" alt="Spotify"></li>
+                        <li><img src="img/DigitalOcean.png" style="max-width: 165px;" alt="DigitalOcean"</li>
+                        <li><img src="img/HashiCorp.png" style="max-width: 130px;" alt="HashiCorp"></li>
+                        <li><img src="img/Spotify.png" alt="Spotify" style="max-width: 120px;"></li>
                     </ul>
                   </div>
-                  <div class="col">
+                  <div class="col2">
                       <a href="#" class="btn btn-outline">Learn More</a>
                   </div>
                 </div>
+                <!--
                 <div class="row eventBox">
                   <div class="col eventBoxHeading">
-                      <h3 class="subheader">OCTOBER 6</h3>
+                      <h3 class="">October 6</h3>
                       <h2>TBD Webinar</h2>
                       <span class="eventTime">00:00PM EST</span>
                   </div>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="row eventBox">
                   <div class="col eventBoxHeading">
-                      <h3 class="subheader">OCTOBER 16</h3>
+                      <h3 class="">October 16</h3>
                       <h2>TBD Livestream</h2>
                       <span class="eventTime">00:00PM EST</span>
                   </div>
@@ -218,7 +218,7 @@
                       <a href="#" class="btn btn-outline">Learn More</a>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
           </section>
           <section class="col centered wrapper">
@@ -232,27 +232,27 @@
                   <div class="col">
                       <h2>Global Hacktoberfest</h2>
                       <ul class="lastYearsList">
-                          <li>483K pull requests opened</li>
-                          <li>154K participating repositories</li>
-                          <li>142 countries </li>
+                          <li><b>483K</b> pull requests opened</li>
+                          <li><b>154K</b> participating repositories</li>
+                          <li><b>142</b> countries </li>
                       </ul>
                   </div>
                   <div class="col">
                     <h2>CircleCI Orbtoberfest</h2>
                     <ul class="lastYearsList">
-                        <li>144 orbtoberfest issues</li>
-                        <li>112 valid submissions </li>
-                        <li>30+ new orbs created</li>
+                        <li><b>144</b> orbtoberfest issues</li>
+                        <li><b>112</b> valid submissions </li>
+                        <li><b>30+</b> new orbs created</li>
                     </ul>
                   </div>
               </div>
           </section>
           <section class="col wrapper padded">
-              <div class="row centered col1-2">
+              <div class="row centered">
                   <h2>Get Started With CircleCI</h2>
               </div>
               <div class="row centered padded">
-                <div class="row col1-2 btn-group">
+                <div class="row col-9 btn-group">
                     <a href="https://circleci.com/signup/" class="btn">Start Building for Free</a>
                     <a href="https://circleci.com/docs/2.0/orb-intro/ " class="btn btn-outline">Orbs Introduction</a>
                 </div>
