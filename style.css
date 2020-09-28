@@ -163,11 +163,6 @@ a {
     font-weight: bold;
 }
 
-hr {
-    width: 100%;
-    box-sizing: border-box;
-}
-
 #navList {
     padding: 0;
     list-style: none;
