@@ -50,6 +50,7 @@ html {
     margin: 0;
     width: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -160,10 +161,6 @@ p {
 a {
     color: var(--accent-pink);
     font-weight: bold;
-}
-
-hr {
-    width: 100%;
 }
 
 #navList {
@@ -384,6 +381,7 @@ hr {
 footer {
     display: flex;
     margin-top: 2em;
+    padding: 0 1em;
     background-color: var(--main-dark-blue);
 }
 
@@ -399,26 +397,28 @@ footer li {
     margin-right: 1em;
 }
 
+.footernav {
+    border-top: 1px solid white;
+    padding-top: 0.5em;
+    margin-top: 0.5em
+}
+
 .footernav a{
     color: white;
 }
 
+.footerSocialIcons,
 .copywrite {
     display: flex;
     flex: 1;
     justify-content: flex-end;
 }
 
-#footerLogo {
+.footerLogo {
     display: flex;
     flex: 1;
 }
 
-.footerSocialIcons {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-}
 .socialIcon {
     padding: 1em;
     color: white;
@@ -481,4 +481,23 @@ footer li {
         align-items: center;
         padding-top: 2em;
     }
-  }
+
+    footer .row.padded {
+        padding: 2em 0;
+    }
+
+    footer ul {
+        margin: 0.5em 0 1.5em;
+    }
+
+    .copywrite {
+      text-align: center;
+    }
+
+    .footerLogo,
+    .footerSocialIcons,
+    footer ul,
+    .copywrite {
+        justify-content: center;
+    }
+}
